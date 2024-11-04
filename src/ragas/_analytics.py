@@ -7,7 +7,6 @@ import typing as t
 import uuid
 from functools import lru_cache, wraps
 
-import requests
 from appdirs import user_data_dir
 from pydantic import BaseModel, Field
 
@@ -111,7 +110,7 @@ def track(event_properties: BaseEvent):
         logger.info("Tracking Payload: %s", payload)
         return
 
-    requests.post(USAGE_TRACKING_URL, json=payload, timeout=USAGE_REQUESTS_TIMEOUT_SEC)
+    logger.debug("Local tracking event: %s", payload)
 
 
 class IsCompleteEvent(BaseEvent):
