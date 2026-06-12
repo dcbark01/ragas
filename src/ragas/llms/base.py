@@ -5,7 +5,7 @@ import typing as t
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 
-from langchain_community.chat_models.vertexai import ChatVertexAI
+ChatVertexAI = "assert unused" # from langchain_community.chat_models.vertexai import ChatVertexAI
 from langchain_community.llms import VertexAI
 from langchain_core.language_models import BaseLanguageModel
 from langchain_core.outputs import ChatGeneration, Generation, LLMResult
